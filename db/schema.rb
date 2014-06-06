@@ -17,21 +17,31 @@ ActiveRecord::Schema.define(version: 20140606150700) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
+    t.string   "text"
+    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "likes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "likable_id"
+    t.string   "likable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
+    t.integer  "author_id"
+    t.string   "title"
+    t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_hash"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
