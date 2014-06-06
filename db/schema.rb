@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20140606150700) do
     t.integer  "user_id"
     t.integer  "likable_id"
     t.string   "likable_type"
-    t.integer  "comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
